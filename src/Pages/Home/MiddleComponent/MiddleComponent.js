@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HiStar } from "react-icons/hi";
-import { Button, Card, Image } from "react-bootstrap";
-import { FaEye, FaRegBookmark, FaShareAlt, FaUserEdit } from "react-icons/fa";
-const MiddleComponent = ({data}) => {
-  const { _id, rating, author, title, image_url, details, total_view } =data;
+import { Card, Image } from "react-bootstrap";
+import { FaEye, FaRegBookmark, FaShareAlt } from "react-icons/fa";
+const MiddleComponent = ({ data }) => {
+  const { _id, rating, author, title, image_url, details, total_view } = data;
   return (
     <Card className="text-start mb-5 border-0 shadow-lg">
       <Card.Header className="d-flex justify-content-between">
@@ -27,12 +27,14 @@ const MiddleComponent = ({data}) => {
         </div>
       </Card.Header>
       <Card.Body>
-        <Card.Title className="fw-bolder"><h4>{title}</h4></Card.Title>
+        <Card.Title className="fw-bolder">
+          <h4 className="text-center">{title}</h4>
+        </Card.Title>
         <Card.Img variant="top" src={image_url} />
         <Card.Text className="text-muted mt-2">
           {details.slice(0, 300)}...
           <Link to={`/news/${_id}`} className="text-decoration-none">
-             Read More
+            Read More
           </Link>
         </Card.Text>
       </Card.Body>

@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Container,
-  Form,
-  Nav,
-  Navbar,
-  Offcanvas,
-} from "react-bootstrap";
+import { Button, Container, Navbar, Offcanvas } from "react-bootstrap";
 import { FaBars, FaPlus, FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import MediaButtons from "../../components/MediaButtons/MediaButtons";
@@ -34,10 +27,10 @@ const Header = () => {
 
           <Offcanvas show={show} onHide={handleClose} responsive="lg">
             <Offcanvas.Header closeButton>
-              <Offcanvas.Title>Responsive offcanvas</Offcanvas.Title>
+              <Offcanvas.Title>News Portal</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <div>
+              <div className="mb-lg-0 mb-3">
                 {" "}
                 <Button className="me-2 text-white fw-bold" variant="danger">
                   <FaPlus className="me-2" />

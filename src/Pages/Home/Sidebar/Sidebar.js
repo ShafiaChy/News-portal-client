@@ -10,17 +10,19 @@ const Sidebar = () => {
   }, []);
   return (
     <div>
-      <h4>All Category</h4>
-      <div class="flex flex-column">
-        {categories?.map((category) => {
-          return (
-            <div class=" mb-3">
-              <Link to={`/${category.category_id}`}>
-                {category.category_name}
-              </Link>
-            </div>
-          );
-        })}
+      <div>
+        <h4>All Category</h4>
+        <div class="flex flex-column">
+          {categories?.map((category) => {
+            return (
+              <div class=" mb-3">
+                <Link to={`/${category.category_id}`}>
+                  {category.category_name}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

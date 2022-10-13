@@ -9,9 +9,9 @@ const News = () => {
   const data = useLoaderData();
   const singleData = data.data[0];
   return (
-    <Container fluid>
-      <Row className="">
-        <Col lg={2} className="d-none d-lg-block ">
+    <Container>
+      <Row>
+        <Col className="d-none d-lg-block" lg={2}>
           <Sidebar></Sidebar>
         </Col>
 
@@ -19,7 +19,7 @@ const News = () => {
           <div class="card mb-5 shadow">
             <img src={singleData.image_url} class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title mb-3">{singleData.title}</h5>
+              <h5 class="card-title mb-3 text-center">{singleData.title}</h5>
               <div className="d-flex justify-content-around">
                 <p class="card-text">
                   <span className="fw-bold">Author: </span>
