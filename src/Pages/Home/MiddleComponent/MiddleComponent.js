@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiStar } from "react-icons/hi";
 import { Card, Dropdown, DropdownButton, Image } from "react-bootstrap";
 import { FaEye, FaRegBookmark, FaShareAlt } from "react-icons/fa";
-import ShareIcons from "../../../components/ShareIcons/ShareIcons";
+
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -15,7 +15,6 @@ const MiddleComponent = ({ data }) => {
   const { _id, rating, author, title, image_url, details, total_view } = data;
   const [newsUrl, setNewsUrl] = useState("");
 
-  console.log(newsUrl);
   return (
     <Card className="text-start mb-5 border-0 shadow-lg">
       <Card.Header className="d-flex justify-content-between">
@@ -38,7 +37,7 @@ const MiddleComponent = ({ data }) => {
           {/* share news via icons */}
           <DropdownButton
             onClick={() => setNewsUrl(`http://localhost:3000/news/${_id}`)}
-            className=""
+            variant={"white"}
             id="dropdown-basic-button"
             title={<FaShareAlt />}
           >
