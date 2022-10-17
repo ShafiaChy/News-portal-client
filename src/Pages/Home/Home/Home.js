@@ -4,7 +4,15 @@ import SideComponent from "../SideComponent/SideComponent";
 import MiddleComponent from "../MiddleComponent/MiddleComponent";
 import Sidebar from "../Sidebar/Sidebar";
 
-import { Col, Container, Dropdown, DropdownButton, Row } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Container,
+  Dropdown,
+  DropdownButton,
+  Row,
+} from "react-bootstrap";
+import Marquee from "react-fast-marquee";
 
 const Home = () => {
   const datas = useLoaderData();
@@ -23,6 +31,19 @@ const Home = () => {
 
   return (
     <Container>
+      <Row className="mb-4">
+        <Col className="d-flex" lg={12}>
+          <div className=" bg-danger text-white text-center">Breaking News</div>
+
+          <Marquee className="d-flex">
+            <ul className="d-flex mt-3">
+              {datas.data.map((newsTitle) => (
+                <li className="me-4 text-danger">{newsTitle.title}</li>
+              ))}
+            </ul>
+          </Marquee>
+        </Col>
+      </Row>
       <Row>
         <Col className="d-none d-lg-block" lg={2}>
           <Sidebar></Sidebar>

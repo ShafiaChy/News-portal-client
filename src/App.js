@@ -13,16 +13,13 @@ function App() {
       children: [
         {
           path: "/",
-          loader: () =>
-            fetch("http://localhost:5000/news-category/08"),
+          loader: () => fetch("http://localhost:5000/news-category/01"),
           element: <Home></Home>,
         },
         {
           path: "/:id",
           loader: async ({ params }) =>
-            fetch(
-              `http://localhost:5000/news-category/${params.id}`
-            ),
+            fetch(`http://localhost:5000/news-category/${params.id}`),
           element: <Home></Home>,
         },
         {

@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiStar } from "react-icons/hi";
-import { Card, Image } from "react-bootstrap";
+import { Card, Dropdown, DropdownButton, Image } from "react-bootstrap";
 import { FaEye, FaRegBookmark, FaShareAlt } from "react-icons/fa";
+import ShareIcons from "../../../components/ShareIcons/ShareIcons";
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+} from "react-share";
+
 const MiddleComponent = ({ data }) => {
   const { _id, rating, author, title, image_url, details, total_view } = data;
+  const [newsUrl, setNewsUrl] = useState("");
+
+  console.log(newsUrl);
   return (
     <Card className="text-start mb-5 border-0 shadow-lg">
       <Card.Header className="d-flex justify-content-between">
@@ -23,7 +34,36 @@ const MiddleComponent = ({ data }) => {
         </div>
         <div className="d-flex align-items-center">
           <FaRegBookmark className="mx-2" />
-          <FaShareAlt />
+
+          {/* share news via icons */}
+          <DropdownButton
+            onClick={() => setNewsUrl(`http://localhost:3000/news/${_id}`)}
+            className=""
+            id="dropdown-basic-button"
+            title={<FaShareAlt />}
+          >
+            <Dropdown.Item>
+              {" "}
+              <FacebookShareButton
+                url={newsUrl}
+                className="Demo__some-network__share-button"
+              >
+                <FacebookIcon size={32} round /> Facebook
+              </FacebookShareButton>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <TwitterShareButton
+                title={title}
+                url={newsUrl}
+                hashtags={["hashtag1", "hashtag2"]}
+              >
+                <TwitterIcon size={32} round />
+                Twitter
+              </TwitterShareButton>
+            </Dropdown.Item>
+          </DropdownButton>
+
+          {/* share news via icons */}
         </div>
       </Card.Header>
       <Card.Body>
