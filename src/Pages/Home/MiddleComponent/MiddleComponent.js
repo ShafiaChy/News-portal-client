@@ -36,7 +36,11 @@ const MiddleComponent = ({ data }) => {
 
           {/* share news via icons */}
           <DropdownButton
-            onClick={() => setNewsUrl(`http://localhost:3000/news/${_id}`)}
+            onClick={() =>
+              setNewsUrl(
+                `https://melodious-phoenix-f2e6cb.netlify.app/news/${_id}`
+              )
+            }
             variant={"white"}
             id="dropdown-basic-button"
             title={<FaShareAlt />}

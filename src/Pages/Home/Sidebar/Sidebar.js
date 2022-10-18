@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/news-category")
+    fetch(
+      "https://news-portal-server-c97ua2fk2-shafiachy.vercel.app/news-category"
+    )
       .then((res) => res.json())
       .then((data) => setCategories(data.data.news_category));
   }, []);

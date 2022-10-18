@@ -13,19 +13,26 @@ function App() {
       children: [
         {
           path: "/",
-          loader: () => fetch("http://localhost:5000/news-category/01"),
+          loader: () =>
+            fetch(
+              "https://news-portal-server-c97ua2fk2-shafiachy.vercel.app/news-category/01"
+            ),
           element: <Home></Home>,
         },
         {
           path: "/:id",
           loader: async ({ params }) =>
-            fetch(`http://localhost:5000/news-category/${params.id}`),
+            fetch(
+              `https://news-portal-server-c97ua2fk2-shafiachy.vercel.app/news-category/${params.id}`
+            ),
           element: <Home></Home>,
         },
         {
           path: "/news/:id",
           loader: async ({ params }) =>
-            fetch(`http://localhost:5000/news-details/${params.id}`),
+            fetch(
+              `https://news-portal-server-c97ua2fk2-shafiachy.vercel.app/news-details/${params.id}`
+            ),
           element: <News></News>,
         },
       ],
