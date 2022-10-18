@@ -38,7 +38,7 @@ const MiddleComponent = ({ data }) => {
           <DropdownButton
             onClick={() =>
               setNewsUrl(
-                `https://melodious-phoenix-f2e6cb.netlify.app/news/${_id}`
+                `https://fabulous-crepe-869cbd.netlify.app/news/${_id}`
               )
             }
             variant={"white"}
