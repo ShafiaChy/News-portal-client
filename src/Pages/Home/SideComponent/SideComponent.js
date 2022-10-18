@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import BrandCarousel from "../../../components/BrandCarousel/BrandCarousel";
 import MediaButtons from "../../../components/MediaButtons/MediaButtons";
 
@@ -21,10 +22,13 @@ const SideComponent = () => {
       {data?.map((data) => (
         <OtherNews data={data} key={data._id}></OtherNews>
       ))}
-      <Button variant="primary">Load All</Button>
+      <Button variant="primary">
+        <Link className="text-decoration-none text-white" to="/08">
+          Load All
+        </Link>
+      </Button>
       <div className="mt-5">
-        
-        <BrandCarousel/>
+        <BrandCarousel />
       </div>
     </div>
   );
