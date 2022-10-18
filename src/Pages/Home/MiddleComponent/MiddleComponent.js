@@ -13,7 +13,7 @@ import {
 
 const MiddleComponent = ({ data }) => {
   const { _id, rating, author, title, image_url, details, total_view } = data;
-  const [newsUrl, setNewsUrl] = useState("");
+  let shareUrl = `${window.location.href}/news/${_id}`;
 
   return (
     <Card className="text-start mb-5 border-0 shadow-lg">
@@ -36,11 +36,6 @@ const MiddleComponent = ({ data }) => {
 
           {/* share news via icons */}
           <DropdownButton
-            onClick={() =>
-              setNewsUrl(
-                `https://fabulous-crepe-869cbd.netlify.app/news/${_id}`
-              )
-            }
             variant={"white"}
             id="dropdown-basic-button"
             title={<FaShareAlt />}
@@ -48,7 +43,7 @@ const MiddleComponent = ({ data }) => {
             <Dropdown.Item>
               {" "}
               <FacebookShareButton
-                url={newsUrl}
+                url={shareUrl}
                 className="Demo__some-network__share-button"
               >
                 <FacebookIcon size={32} round /> Facebook
@@ -56,8 +51,7 @@ const MiddleComponent = ({ data }) => {
             </Dropdown.Item>
             <Dropdown.Item>
               <TwitterShareButton
-                title={title}
-                url={newsUrl}
+                url={shareUrl}
                 hashtags={["hashtag1", "hashtag2"]}
               >
                 <TwitterIcon size={32} round />
@@ -66,7 +60,7 @@ const MiddleComponent = ({ data }) => {
             </Dropdown.Item>
           </DropdownButton>
 
-          {/* share news via icons */}
+          {/* share news via icons ends here*/}
         </div>
       </Card.Header>
       <Card.Body>

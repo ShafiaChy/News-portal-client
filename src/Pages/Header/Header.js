@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Button,
   Container,
@@ -10,10 +10,12 @@ import {
 import { FaBars, FaPlus, FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import MediaButtons from "../../components/MediaButtons/MediaButtons";
+import { AuthContext } from "../../contexts/UserContext";
 import Sidebar from "../Home/Sidebar/Sidebar";
 
 const Header = () => {
   const [show, setShow] = useState(false);
+  const {logOut} = useContext(AuthContext);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -51,7 +53,7 @@ const Header = () => {
                   <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
                   <Dropdown.Item href="#/action-2">Bookmarks</Dropdown.Item>
                   <Dropdown.Item href="#/action-3">Settings</Dropdown.Item>
-                  <Dropdown.Item href="#/action-4">SignOut</Dropdown.Item>
+                  <Dropdown.Item href="#/action-4" onClick={logOut}>SignOut</Dropdown.Item>
                 </DropdownButton>
               </div>
               {show && (

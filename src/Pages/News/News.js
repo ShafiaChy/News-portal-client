@@ -43,6 +43,7 @@ const News = () => {
           <SideComponent />
         </Col>
       </Row>
+      
     </Container>
   );
 };

@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Main from "../src/Pages/Layout/Main/Main";
 import Home from "./Pages/Home/Home/Home";
 import News from "./Pages/News/News";
+import PrivateRoute from "./components/PrivateRoute.js/PrivateRoute";
+import Login from "./components/Login/Login";
 
 function App() {
   const router = createBrowserRouter([
@@ -20,6 +22,11 @@ function App() {
           element: <Home></Home>,
         },
         {
+          path: "/login",
+          
+          element: <Login></Login>,
+        },
+        {
           path: "/:id",
           loader: async ({ params }) =>
             fetch(
@@ -33,7 +40,7 @@ function App() {
             fetch(
               `https://news-portal-server-c97ua2fk2-shafiachy.vercel.app/news-details/${params.id}`
             ),
-          element: <News></News>,
+          element: <PrivateRoute><News></News></PrivateRoute>,
         },
       ],
     },
