@@ -48,9 +48,6 @@ const Header = () => {
                   id="dropdown-basic-button"
                   title={<FaUserCircle className="fw-bold" />}
                 >
-                  <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Bookmarks</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Settings</Dropdown.Item>
                   <Dropdown.Item href="#/action-4">SignOut</Dropdown.Item>
                 </DropdownButton>
               </div>

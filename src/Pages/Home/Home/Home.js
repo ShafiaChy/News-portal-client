@@ -13,6 +13,7 @@ import {
   Row,
 } from "react-bootstrap";
 import Marquee from "react-fast-marquee";
+import { FaAngleRight, FaStar } from "react-icons/fa";
 
 const Home = () => {
   const datas = useLoaderData();
@@ -33,14 +34,15 @@ const Home = () => {
     <Container>
       <Row className="mb-4">
         <Col className="d-flex" lg={12}>
-          <div className=" bg-danger text-white text-center">Breaking News</div>
-
-          <Marquee className="d-flex">
-            <ul className="d-flex mt-3">
+          <Marquee className="d-flex" gradient={false}>
+            <div className="d-flex mt-3">
               {datas.data.map((newsTitle) => (
-                <li className="me-4 text-danger">{newsTitle.title}</li>
+                <div className="text-danger d-flex align-items-center justify-content-evenly">
+                  <p className="px-2 mb-0 fs-5 fw-bold">{newsTitle.title}</p>
+                  <FaStar />
+                </div>
               ))}
-            </ul>
+            </div>
           </Marquee>
         </Col>
       </Row>
