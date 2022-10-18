@@ -5,6 +5,8 @@ import { Card, Dropdown, DropdownButton, Image } from "react-bootstrap";
 import { FaEye, FaRegBookmark, FaShareAlt } from "react-icons/fa";
 
 import {
+  EmailIcon,
+  EmailShareButton,
   FacebookIcon,
   FacebookShareButton,
   TwitterIcon,
@@ -13,7 +15,7 @@ import {
 
 const MiddleComponent = ({ data }) => {
   const { _id, rating, author, title, image_url, details, total_view } = data;
-  let shareUrl = `${window.location.href}/news/${_id}`;
+  const shareUrl = `${window.location.href}/news/${_id}`;
 
   return (
     <Card className="text-start mb-5 border-0 shadow-lg">
@@ -50,7 +52,18 @@ const MiddleComponent = ({ data }) => {
               </FacebookShareButton>
             </Dropdown.Item>
             <Dropdown.Item>
+              {" "}
+              <EmailShareButton
+                subject={title}
+                url={shareUrl}
+                className="Demo__some-network__share-button"
+              >
+                <EmailIcon size={32} round /> Email
+              </EmailShareButton>
+            </Dropdown.Item>
+            <Dropdown.Item>
               <TwitterShareButton
+                title={title}
                 url={shareUrl}
                 hashtags={["hashtag1", "hashtag2"]}
               >

@@ -18,6 +18,7 @@ const UserContext = ({ children }) => {
     const signInWithGoogle = () =>{
         return signInWithPopup(auth, googleProvider);
     }
+    
 
     const logOut = () => {
         setLoading(true);

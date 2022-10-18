@@ -4,6 +4,7 @@ import { HiStar } from "react-icons/hi";
 import { useLoaderData } from "react-router-dom";
 import Sidebar from "../Home/Sidebar/Sidebar";
 import SideComponent from "../Home/SideComponent/SideComponent";
+import NewsComments from "./NewsComments";
 
 const News = () => {
   const data = useLoaderData();
@@ -36,6 +37,9 @@ const News = () => {
               </div>
               <p class="card-text">{singleData.details}</p>
             </div>
+          </div>
+          <div >
+            <NewsComments></NewsComments>
           </div>
         </Col>
 

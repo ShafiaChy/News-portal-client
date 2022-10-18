@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import {  FaGoogle } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom/dist";
 import { AuthContext } from "../../contexts/UserContext";
@@ -23,12 +23,7 @@ const Login = () => {
           </span>{" "}
           Login via Google
         </Button>
-        <Button variant="outline-dark">
-          <span>
-            <FaGithub />
-          </span>{" "}
-          Login via Github
-        </Button>
+        
       </ButtonGroup>
     </div>
   );
